@@ -2,8 +2,8 @@
 #include <cstdio>
 #include <cstdlib>
 
-const int M = 1 + pow(2, 7);
-const int N = 1 + pow(2, 3);
+const int M = 1 + pow(2, 7);  // You can change this for your specific game!
+const int N = 1 + pow(2, 3);  // You can change this for your specific game!
 
 void initBoard(int board[M][N], int M, int N) {
   for (int m = 0; m < M; m++) {
