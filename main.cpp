@@ -45,13 +45,14 @@ void gameLoop(int board[M][N], bool cont, int players, int M, int N) {
   } while (cont);
 }
 
-int main(int argc, char **argv) {
+int main(void) {
   int P;
   bool cont = true;
   if (argc < 1) {
     return EXIT_FAILURE;
   } else {
-    P = atoi(argv[1]);
+    std::cout << "Initialising game... How many players?";
+    std::cin >> P;
   }
   int board[M][N];
   initBoard(board, M, N);
