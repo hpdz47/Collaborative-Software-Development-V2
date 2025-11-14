@@ -55,16 +55,19 @@ Examples include:
 
 
 
-## Build Instructions:
+## Build Instructions
 
 ### Prerequisites
 
-- C++17 compiler (e.g. g++, clang++, MSVC)
-- CMake (3.10+ recommended)
+- A C++17 compiler (e.g. g++, clang++)
+- make (available by default on Linux/macOS; on Windows via MinGW or WSL)
 
-### Getting the Source Code
+### Build the game
 
-The source code is in main.cpp of this repo
+```bash
+make
+./cybergame
+
 
 
 
