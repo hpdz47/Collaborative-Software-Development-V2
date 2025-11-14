@@ -68,6 +68,13 @@ Examples include:
 make
 ./cybergame
 
+```md
+### Run tests
+
+```bash
+make test
+
+
 
 
 
