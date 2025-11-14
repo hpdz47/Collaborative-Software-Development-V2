@@ -2,8 +2,8 @@
 #include <cstdio>
 #include <cstdlib>
 
-const int M = 1 + pow(2, 7);  // You can change this for your specific game!
-const int N = 1 + pow(2, 3);  // You can change this for your specific game!
+const int M = 1 + std::pow(2, 7);  // You can change this for your specific game!
+const int N = 1 + std::pow(2, 3);  // You can change this for your specific game!
 
 void initBoard(int board[M][N], int M, int N) {
   for (int m = 0; m < M; m++) {
@@ -20,6 +20,8 @@ int parseBoard(int board[M][N]) {
    * If you find yourself with a great deal of spare time you might try
    * rendering the board to the terminal here, too.
    */
+
+  // For now, no winner:
   return 0;
 }
 
@@ -28,8 +30,9 @@ void gameLoop(int board[M][N], bool cont, int players, int M, int N) {
   int m, n;
   do {
     for (int p = 1; p <= players; ++p) {
-      std::cout << "Player " << p << " place:";
+      std::cout << "Player " << p << " place: ";
       std::cin >> m >> n;
+
       if (board[m][n] == 0) {
         std::cout << p << " at (" << m << ", " << n << ")." << std::endl;
         board[m][n] = p;
@@ -37,6 +40,7 @@ void gameLoop(int board[M][N], bool cont, int players, int M, int N) {
         std::cout << "Illegal move!" << std::endl;
       }
     }
+
     winner = parseBoard(board);
     if (winner != 0) {
       std::cout << "Player " << winner << " has won!" << std::endl;
@@ -45,17 +49,18 @@ void gameLoop(int board[M][N], bool cont, int players, int M, int N) {
   } while (cont);
 }
 
-int main(void) {
+#ifndef UNIT_TESTING
+int main() {
   int P;
   bool cont = true;
-  if (argc < 1) {
-    return EXIT_FAILURE;
-  } else {
-    std::cout << "Initialising game... How many players?";
-    std::cin >> P;
-  }
+
+  std::cout << "Initialising game... How many players? ";
+  std::cin >> P;
+
   int board[M][N];
   initBoard(board, M, N);
   gameLoop(board, cont, P, M, N);
+
   return EXIT_SUCCESS;
 }
+#endif
