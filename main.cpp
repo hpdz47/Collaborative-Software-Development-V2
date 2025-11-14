@@ -14,15 +14,19 @@ void initBoard(int board[M][N], int M, int N) {
 }
 
 int parseBoard(int board[M][N]) {
-  /*
-   * This function is where you should define your win conditions.
-   * If player p in [1,...,P] has won, then you should return p; otherwise 0.
-   * If you find yourself with a great deal of spare time you might try
-   * rendering the board to the terminal here, too.
-   */
-
-  // For now, no winner:
-  return 0;
+    // Check every top-left corner of a possible 2x2 square
+    for (int i = 0; i < M - 1; ++i) {
+        for (int j = 0; j < N - 1; ++j) {
+            int p = board[i][j];
+            if (p != 0 &&
+                board[i+1][j]   == p &&
+                board[i][j+1]   == p &&
+                board[i+1][j+1] == p) {
+                return p; // player p wins
+            }
+        }
+    }
+    return 0; // no winner
 }
 
 void gameLoop(int board[M][N], bool cont, int players, int M, int N) {
