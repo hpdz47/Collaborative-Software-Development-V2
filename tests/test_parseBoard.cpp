@@ -1,6 +1,6 @@
 #define UNIT_TESTING
 #include "../main.cpp"
-#include "acutest.h"
+#include "tests/acutest.h"
 
 void test_empty_board_has_no_winner(void) {
     int board[M][N] = {0};
