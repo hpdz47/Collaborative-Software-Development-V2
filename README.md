@@ -39,14 +39,7 @@ A player forms a *circuit* if:
 
 - The path length satisfies $k \ge 4$,
 - All cells in the path are distinct,
-- The final cell $c_k$ is adjacent to the first cell $c_1$,
-- The structure forms a **simple cycle** on the grid with no self-intersections.
-
-Examples include:
-
-- A $2 \times 2$ square,
-- A rectangular ring,
-- Any other closed polygon made of contiguous player-owned cells.
+- The structure forms a **$2 \times 2$ square,** on the grids.
 
 ### Winning Rule
 
