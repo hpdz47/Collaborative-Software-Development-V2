@@ -37,7 +37,7 @@ $(c_1, c_2, \ldots, c_k)$ such that:
 
 A player forms a *circuit* if:
 
-- The path length satisfies $k \ge 4$,
+- The path length satisfies $k = 4$,
 - All cells in the path are distinct,
 - The structure forms a **$2 \times 2$ square,** on the grids.
 
